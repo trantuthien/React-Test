@@ -10,7 +10,7 @@ import bg from '../../header-bk.png';
 export function Footer() {
   return (
     <div className={styles.footer}>
-      <p className="text-center">The Musteker Team</p>
+      <p className="text-center">The Musketeer Team</p>
     </div>
   );
 }
