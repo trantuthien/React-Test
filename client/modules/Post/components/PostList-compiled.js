@@ -53,9 +53,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(PostList, 'PostList', '/Users/thientran/Downloads/mern_v2/client/modules/Post/components/PostList.js');
+  __REACT_HOT_LOADER__.register(PostList, 'PostList', '/Users/thientran/Downloads/mern_v2/client/modules/UserInfo/components/PostList.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Downloads/mern_v2/client/modules/Post/components/PostList.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Downloads/mern_v2/client/modules/UserInfo/components/PostList.js');
 })();
 
 ;

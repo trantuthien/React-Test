@@ -10,8 +10,8 @@ import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 export function Header(props, context) {
   const languageNodes = props.intl.enabledLanguages.map(
-    lang => <li key={lang} ><a onClick={() => props.switchLanguage(lang)}
-                   className={lang === props.intl.locale ? 'ttt' : ''}>{lang}</a></li>
+    lang => <li key={lang}><a onClick={() => props.switchLanguage(lang)}
+                              className={lang === props.intl.locale ? 'ttt' : ''}>{lang}</a></li>
   );
 
   return <nav className="navbar navbar-default">
@@ -34,6 +34,9 @@ export function Header(props, context) {
               id="addPost"/></a>
               : null
           }</li>
+          <li key="3">
+            <Link to="/sign-up">Sign Up</Link>
+          </li>
         </ul>
       </div>
     </div>
