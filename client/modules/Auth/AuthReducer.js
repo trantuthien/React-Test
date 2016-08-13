@@ -15,7 +15,7 @@ const AuthReducer = (state = initialState, action) => {
 
     case SIGN_UP :
       return {
-        data: action.userinfo,
+        data: [action, ...state.data],
       };
 
     case LOST_PASS :
@@ -31,7 +31,7 @@ const AuthReducer = (state = initialState, action) => {
 /* Selectors */
 //
 // // Get all posts
-// export const getPosts = state => state.posts.data;
+export const checkSuccess = state => state.auth.data;
 //
 // // Get post by cuid
 // export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];

@@ -29,25 +29,32 @@ import sanitizeHtml from 'sanitize-html';
  */
 export function addUser(req, res) {
   console.log(req.body.userinfo);
-  let userinfo = JSON.parse(req.body.userinfo);
-  if (!userinfo || !userinfo.username || !userinfo.email || !userinfo.password) {
-    res.status(403).end();
-  }
-
-  const newUser = new UserInfo(req.body.userinfo);
-
-  // Let's sanitize inputs
-  newUser.username = sanitizeHtml(newUser.username);
-  newUser.email = sanitizeHtml(newUser.email);
-  newUser.password = sanitizeHtml(newUser.password);
-
-  //newUser.cuid = cuid();
-  newUser.save((err, saved) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.json({ post: saved });
+  var userinfo = new UserInfo(req.body.userinfo);
+  // var userinfo = new UserInfo(JSON.parse(req.body.userinfo));
+  userinfo.save(function (err, userreturn) {
+    if (err) return console.error(err);
+    res.json({success: true, message: userreturn});
   });
+  //
+  // var userinfo = JSON.parse(req.body.userinfo);
+  // if (!userinfo || !userinfo.username || !userinfo.email || !userinfo.password) {
+  //   res.status(403).end();
+  // }
+  //
+  // const newUser = new UserInfo(req.body.userinfo);
+  //
+  // // Let's sanitize inputs
+  // newUser.username = sanitizeHtml(newUser.username);
+  // newUser.email = sanitizeHtml(newUser.email);
+  // newUser.password = sanitizeHtml(newUser.password);
+  //
+  // newUser.cuid = cuid();
+  // newUser.save((err, saved) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   }
+  //   res.json({ newUser: saved });
+  // });
 }
 //
 // /**

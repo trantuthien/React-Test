@@ -37,19 +37,22 @@ export class SignUp extends Component {
           <div className='form-group'>
             <input type='text'
                    className='form-control input-lg'
+                   value="lsdkjflskf"
                    placeholder='Username' ref="username" />
           </div>
           <div className='form-group'>
             <input type='text'
                    className='form-control input-lg'
+                   value="alfjslk"
                    placeholder='Email' ref="email" />
           </div>
           <div className='form-group'>
             <input type='password'
+                   value="ldsjslk"
                    className='form-control input-lg'
                    placeholder='Password' ref="password"/>
           </div>
-          <button type='submit' className='btn btn-lg' onClick={this.signupfunc}>Submit</button>
+          <a className="btn btn-lg" href="#" onClick={this.signupfunc}><FormattedMessage id="submit" /></a>
         </form>
       </div>
     );

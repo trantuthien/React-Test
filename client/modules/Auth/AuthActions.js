@@ -18,13 +18,13 @@ export function signUp(userinfo) {
 
 export function signUpRequest(userinfo) {
   return (dispatch) => {
-    return callApi('signup', 'post', {
+    return callApi('auth/signup', 'post', {
       userinfo: {
-        name: userinfo.name,
+        username: userinfo.username,
         email: userinfo.email,
         password: userinfo.password,
       },
-    }).then(res => dispatch(signUp(res.userinfo)));
+    }).then(res => dispatch(signUp(res.message)));
   };
 }
 

@@ -9,9 +9,11 @@ import Helmet from 'react-helmet';
 import SignUp from '../components/SignUp';
 import SignIn from '../components/SignIn';
 
+import styles from './Auth.css';
 // Import Actions
 import {signUpRequest} from '../AuthActions';
 
+import {checkSuccess} from '../AuthReducer';
 class AuthenticationPage extends Component {
 
   // handleDeletePost = post => {
@@ -25,6 +27,8 @@ class AuthenticationPage extends Component {
   };
 
   render() {
+    var {userinfo, reduxState} = this.props;
+    const cls = `${styles.form} ${((userinfo[0]) ? styles.appear : '')}`;
     return (
       <div>
         <Helmet title="Sign Up & In"/>
@@ -38,6 +42,11 @@ class AuthenticationPage extends Component {
           <div className="tab-content">
             <div role="tabpanel" className="tab-pane active" id="home">
               <SignUp signupfunc={this.handleSignUp} intl={this.intl}/>
+              <div className={cls}>Sign Up Success</div>
+              {/*<div>Thong Tin lon: {JSON.stringify(userinfo, null, 2)}</div>*/}
+              {/*<pre>*/}
+              {/*redux state = { JSON.stringify(reduxState, null, 2) }*/}
+              {/*</pre>*/}
             </div>
             <div role="tabpanel" className="tab-pane" id="profile">
               <SignIn signinfunc={this.handleSignUp} intl={this.intl}/>
@@ -50,10 +59,13 @@ class AuthenticationPage extends Component {
 }
 
 // Retrieve data from store as props
+
 // Retrieve data from store as props
 function mapStateToProps(store) {
   return {
     intl: store.intl,
+    userinfo: checkSuccess(store),
+    reduxState: store,
   };
 }
 
@@ -63,6 +75,11 @@ AuthenticationPage.propTypes = {
 
 AuthenticationPage.contextTypes = {
   router: React.PropTypes.object,
+  userinfo: PropTypes.shape({
+    username: PropTypes.string,
+    password: PropTypes.string,
+    email: PropTypes.string,
+  }),
 };
 
 export default connect(mapStateToProps)(AuthenticationPage);
