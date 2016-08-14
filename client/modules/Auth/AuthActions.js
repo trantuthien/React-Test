@@ -9,10 +9,10 @@ export const SIGN_IN = 'SIGN_IN';
 export const LOST_PASS = 'LOST_PASS';
 
 // Export Actions
-export function signUp(userinfo) {
+export function signUp(dataserver) {
   return {
     type: SIGN_UP,
-    userinfo,
+    dataserver,
   };
 }
 
@@ -24,7 +24,7 @@ export function signUpRequest(userinfo) {
         email: userinfo.email,
         password: userinfo.password,
       },
-    }).then(res => dispatch(signUp(res.message)));
+    }).then(res => dispatch(signUp(res)));
   };
 }
 

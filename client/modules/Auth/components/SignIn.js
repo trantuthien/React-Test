@@ -12,18 +12,16 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 // import styles from './Auth.css';
 
 export class SignIn extends Component {
-  signinpfunc = () => {
-    const usernameRef = this.refs.username;
+  signin = () => {
     const emailRef = this.refs.email;
     const passwordRef = this.refs.password;
-    if (usernameRef.value && emailRef.value && passwordRef.value) {
+    if (emailRef.value && passwordRef.value) {
       var userinfo_data = {
-        username: usernameRef.value,
         password: passwordRef.value,
         email: emailRef.value,
       };
       this.props.signinfunc(userinfo_data);
-      usernameRef.value = emailRef.value = passwordRef.value = '';
+      emailRef.value = passwordRef.value = '';
     }
   };
 
@@ -46,7 +44,7 @@ export class SignIn extends Component {
                    className='form-control input-lg'
                    placeholder='Password' />
           </div>
-          <button type='submit' className='btn btn-lg'>Submit</button>
+          <a className="btn btn-lg" href="#" onClick={this.signin}><FormattedMessage id="submit" /></a>
         </form>
       </div>
     );

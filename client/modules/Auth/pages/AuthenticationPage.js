@@ -28,7 +28,8 @@ class AuthenticationPage extends Component {
 
   render() {
     var {userinfo, reduxState} = this.props;
-    const cls = `${styles.form} ${((userinfo[0]) ? styles.appear : '')}`;
+    const cls = `${styles.form} ${((userinfo==11) ? styles.appear : '' )}`;
+    const cll = `${styles.form} ${((userinfo==12) ? styles.appear : '' )}`;
     return (
       <div>
         <Helmet title="Sign Up & In"/>
@@ -43,6 +44,7 @@ class AuthenticationPage extends Component {
             <div role="tabpanel" className="tab-pane active" id="home">
               <SignUp signupfunc={this.handleSignUp} intl={this.intl}/>
               <div className={cls}>Sign Up Success</div>
+              <div className={cll}>User Exits</div>
               {/*<div>Thong Tin lon: {JSON.stringify(userinfo, null, 2)}</div>*/}
               {/*<pre>*/}
               {/*redux state = { JSON.stringify(reduxState, null, 2) }*/}

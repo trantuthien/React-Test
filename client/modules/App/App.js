@@ -49,7 +49,6 @@ export class App extends Component {
             ]}
             link={[
               { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css' },
-              { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css' },
             ]}
             script={[
               { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js' },

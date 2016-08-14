@@ -20,7 +20,7 @@ export class SignUp extends Component {
         email: emailRef.value,
       };
       this.props.signupfunc(userinfo_data);
-      usernameRef.value = emailRef.value = passwordRef.value = '';
+      // usernameRef.value = emailRef.value = passwordRef.value = '';
     }
   };
 
@@ -30,29 +30,26 @@ export class SignUp extends Component {
     <div>
 
         <div className="text-center">
-          <h3>Welcome back!</h3>
-          <p>Sign in with your email to continue</p>
+          <h3>Welcome!</h3>
+          <p>Sign up with your email to continue</p>
         </div>
         <form role='form'>
           <div className='form-group'>
             <input type='text'
                    className='form-control input-lg'
-                   value="lsdkjflskf"
-                   placeholder='Username' ref="username" />
+                   placeholder='Username' ref="username" required/>
           </div>
           <div className='form-group'>
-            <input type='text'
+            <input type='email'
                    className='form-control input-lg'
-                   value="alfjslk"
-                   placeholder='Email' ref="email" />
+                   placeholder='Email' ref="email" required/>
           </div>
           <div className='form-group'>
             <input type='password'
-                   value="ldsjslk"
                    className='form-control input-lg'
-                   placeholder='Password' ref="password"/>
+                   placeholder='Password' ref="password" required/>
           </div>
-          <a className="btn btn-lg" href="#" onClick={this.signupfunc}><FormattedMessage id="submit" /></a>
+          <button type="submit" className="btn btn-default btn-lg" href="#" onClick={this.signupfunc}><FormattedMessage id="submit" /></button>
         </form>
       </div>
     );

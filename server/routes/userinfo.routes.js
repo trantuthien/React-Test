@@ -6,7 +6,10 @@ const router = new Router();
 // Add a new UserInfo
 router.route('/signup').post(UserInfoController.addUser);
 
+router.route('/verify').get(UserInfoController.verify);
+
 // Delete a post by cuid
 // router.route('/signin').post(UserInfoController.sign);
 
 export default router;
+
