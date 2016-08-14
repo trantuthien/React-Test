@@ -1,8 +1,8 @@
 /**
  * Created by thientran on 8/13/16.
  */
-import React, { Component, PropTypes } from 'react';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import React, {Component, PropTypes} from 'react';
+import {injectIntl, intlShape, FormattedMessage} from 'react-intl';
 
 export class SignIn extends Component {
   signinfunc = () => {
@@ -25,26 +25,28 @@ export class SignIn extends Component {
           <h3>Welcome back!</h3>
           <p>Sign in with your email to continue</p>
         </div>
-        <form role='form' onSubmit={this.signinfunc}>
+        <form role='form'>
           <div className='form-group'>
             <input
-                    ref='email'
-                    type='email'
-                    className='form-control input-lg'
-                    placeholder='Email' required/>
+              ref='email'
+              type='email'
+              value='bachtt@topica.edu.vn'
+              className='form-control input-lg'
+              placeholder='Email' required/>
           </div>
           <div className='form-group'>
             <input
-                    ref='password'
-                    type='password'
-                    className='form-control input-lg'
-                    placeholder='Password' required/>
+              ref='password'
+              type='password'
+              value='fucktan'
+              className='form-control input-lg'
+              placeholder='Password' required/>
           </div>
-          <button
-                    type='submit'
-                    className='btn btn-default btn-lg'>
-            <FormattedMessage id="submit" />
-          </button>
+          <a
+            type='submit' onClick={this.signinfunc}
+            className='btn btn-default btn-lg'>
+            <FormattedMessage id="submit"/>
+          </a>
         </form>
       </div>
     );

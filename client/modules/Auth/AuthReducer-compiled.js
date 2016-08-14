@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.checkSuccess = undefined;
+exports.checkSigninSuccess = exports.checkSuccess = undefined;
 
 var _AuthActions = require('./AuthActions');
 
@@ -22,7 +22,7 @@ var AuthReducer = function AuthReducer() {
   switch (action.type) {
     case _AuthActions.SIGN_IN:
       return {
-        data: [action.userinfo].concat(_toConsumableArray(state.data))
+        data: [action].concat(_toConsumableArray(state.data))
       };
 
     case _AuthActions.SIGN_UP:
@@ -51,6 +51,20 @@ var checkSuccess = exports.checkSuccess = function checkSuccess(state) {
   }
   return 13; //ko nhan dc thong tin sever
 };
+
+var checkSigninSuccess = exports.checkSigninSuccess = function checkSigninSuccess(state) {
+  if (state.auth.data != null) {
+    if (state.auth.data.length > 0) {
+      if (state.auth.data[0].dataserver.mode == 10) {
+        //dang nhap thanh cong
+        state.auth.data[0].dataserver.mode = 11;
+        return 14;
+      } else if (state.auth.data[0].dataserver.mode == 66) return 15;
+    }
+  }
+  return 16; //ko nhan dc thong tin sever
+};
+
 //
 // // Get post by cuid
 // export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
@@ -65,13 +79,15 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(checkSuccess, 'checkSuccess', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthReducer.js');
+  __REACT_HOT_LOADER__.register(checkSuccess, 'checkSuccess', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthReducer.js');
 
-  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthReducer.js');
+  __REACT_HOT_LOADER__.register(checkSigninSuccess, 'checkSigninSuccess', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthReducer.js');
 
-  __REACT_HOT_LOADER__.register(AuthReducer, 'AuthReducer', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthReducer.js');
+  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthReducer.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthReducer.js');
+  __REACT_HOT_LOADER__.register(AuthReducer, 'AuthReducer', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthReducer.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthReducer.js');
 })();
 
 ;

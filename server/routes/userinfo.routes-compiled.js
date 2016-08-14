@@ -33,9 +33,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(router, 'router', '/home/black/Documents/Mern/React-Test/server/routes/userinfo.routes.js');
+  __REACT_HOT_LOADER__.register(router, 'router', '/Users/thientran/Documents/SourceTree/React-Test/server/routes/userinfo.routes.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/server/routes/userinfo.routes.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/server/routes/userinfo.routes.js');
 })();
 
 ;

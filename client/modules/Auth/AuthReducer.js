@@ -10,7 +10,7 @@ const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case SIGN_IN :
       return {
-        data: [action.userinfo, ...state.data],
+        data: [action, ...state.data],
       };
 
     case SIGN_UP :
@@ -41,7 +41,22 @@ export const checkSuccess = function (state) {
     }
   }
   return 13;//ko nhan dc thong tin sever
-}
+};
+
+export const checkSigninSuccess = function (state) {
+  if (state.auth.data != null) {
+    if (state.auth.data.length > 0) {
+      if (state.auth.data[0].dataserver.mode == 10) {//dang nhap thanh cong
+        state.auth.data[0].dataserver.mode = 11;
+        return 14;
+      }
+      else if (state.auth.data[0].dataserver.mode == 66)
+        return 15;
+    }
+  }
+  return 16;//ko nhan dc thong tin sever
+};
+
 //
 // // Get post by cuid
 // export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];

@@ -28,10 +28,10 @@ export function signUpRequest(userinfo) {
   };
 }
 
-export function signIn(usersignin) {
+export function signIn(dataserver) {
   return {
     type: SIGN_IN,
-    usersignin,
+    dataserver,
   };
 }
 
@@ -42,6 +42,6 @@ export function signInRequest(usersignin) {
           email: usersignin.email,
           password: usersignin.password,
       }
-    }).then((res) => dispatch(signIn(usersignin)));
+    }).then((res) => dispatch(signIn(res)));
   };
 }

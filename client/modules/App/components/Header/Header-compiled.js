@@ -127,9 +127,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Header, 'Header', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(Header, 'Header', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/App/components/Header/Header.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/App/components/Header/Header.js');
 })();
 
 ;

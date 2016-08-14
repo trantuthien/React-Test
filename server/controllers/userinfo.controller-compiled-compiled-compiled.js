@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.addUser = addUser;
 exports.verify = verify;
-exports.SignIn = SignIn;
 
 var _userinfo = require('../models/userinfo');
 
@@ -25,7 +24,9 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 
 var _sendEmail = require('../util/sendEmail');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Created by thientran on 8/13/16.
@@ -109,22 +110,7 @@ function verify(req, res) {
   } else {
     res.status(403).json({ success: false, message: 'WRONG USER' });
   }
-}
-
-function SignIn(req, res) {
-  console.log(req.body.usersignin);
-  var usersignin = new _userinfo2.default(req.body.usersignin);
-  var query = { 'email': usersignin.email, 'password': usersignin.password, 'isactive': 1 };
-  _userinfo2.default.findOne(query, function (err, usersignin) {
-    console.log(err);
-    console.log(usersignin);
-    if (usersignin !== null) {
-      usersignin.password = '';
-      fconstant.response(constant.RES_TYPE_JSON, res, true, constant.RES_USER_SIGNIN_SUCCESS, usersignin);
-    } else {
-      fconstant.response(constant.RES_TYPE_JSON, res, false, constant.RES_USER_SIGNIN_FAIL, err);
-    }
-  });
+  // if (req.path == '/authenticate') next();
 }
 ;
 
@@ -138,10 +124,64 @@ function SignIn(req, res) {
   __REACT_HOT_LOADER__.register(addUser, 'addUser', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
 
   __REACT_HOT_LOADER__.register(verify, 'verify', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
-
-  __REACT_HOT_LOADER__.register(SignIn, 'SignIn', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
 })();
 
 ;
 
 //# sourceMappingURL=userinfo.controller-compiled.js.map
+
+;
+
+(function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_userinfo2, '_userinfo2', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_cuid2, '_cuid2', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_limax2, '_limax2', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_sanitizeHtml2, '_sanitizeHtml2', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(addUser, 'addUser', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+
+  __REACT_HOT_LOADER__.register(verify, 'verify', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller-compiled.js');
+})();
+
+;
+
+//# sourceMappingURL=userinfo.controller-compiled-compiled.js.map
+
+;
+
+(function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_userinfo2, '_userinfo2', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_cuid2, '_cuid2', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_limax2, '_limax2', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_sanitizeHtml2, '_sanitizeHtml2', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(addUser, 'addUser', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+
+  __REACT_HOT_LOADER__.register(verify, 'verify', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller-compiled-compiled.js');
+})();
+
+;
+
+//# sourceMappingURL=userinfo.controller-compiled-compiled-compiled.js.map

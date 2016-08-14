@@ -95,9 +95,10 @@ export function SignIn(req, res) {
     console.log(err);
     console.log(usersignin);
     if (usersignin !== null){
-
+      usersignin.password = '';
+      fconstant.response(constant.RES_TYPE_JSON, res, true, constant.RES_USER_SIGNIN_SUCCESS, usersignin);
     }else {
-
+      fconstant.response(constant.RES_TYPE_JSON, res, false, constant.RES_USER_SIGNIN_FAIL, err);
     }
   });
 }

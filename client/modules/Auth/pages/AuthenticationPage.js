@@ -12,7 +12,7 @@ import styles from './Auth.css';
 // Import Actions
 import {signUpRequest, signInRequest} from '../AuthActions';
 // Import Selector
-import {checkSuccess} from '../AuthReducer';
+import {checkSuccess, checkSigninSuccess} from '../AuthReducer';
 
 class AuthenticationPage extends Component {
   // Truyen ham handleSignUp vao Component SignUp
@@ -24,10 +24,17 @@ class AuthenticationPage extends Component {
     this.props.dispatch(signInRequest(usersignin));
   };
 
+
   render() {
-    var {userinfo, reduxState} = this.props;     // Khai bao bien userinfo va reduxSate de xem du lieu tra ve
+    var {userinfo, reduxState, usersignin} = this.props;     // Khai bao bien userinfo va reduxSate de xem du lieu tra ve
     const cls = `${styles.form} ${((userinfo==11) ? styles.appear : '' )}`; // Neu userinfo =11 thi them class appear o trong file Auth.css
     const cll = `${styles.form} ${((userinfo==12) ? styles.appear : '' )}`; // Neu userinfo =12 thi them class appear o trong file Auth.css
+
+    const fuck = `${styles.form} ${((usersignin==14) ? styles.appear : '' )}`; // Neu userinfo =11 thi them class appear o trong file Auth.css
+    const tan = `${styles.form} ${((usersignin==15) ? styles.appear : '' )}`; // Neu userinfo =12 thi them class appear o trong file Auth.css
+    if(usersignin == 14){
+      this.context.router.push('/');
+    }
     return (
       <div>
         <Helmet title="Sign Up & In"/>
@@ -41,15 +48,17 @@ class AuthenticationPage extends Component {
           <div className="tab-content">
             <div role="tabpanel" className="tab-pane active" id="home">
               <SignIn signinfunc={this.handleSignIn} intl={this.intl}/>
+              <div className={fuck}>Sign In Success</div>
+              <div className={tan}>User Not Exits</div>
+              <pre>
+              redux state = { JSON.stringify(reduxState, null, 2) }
+              </pre>
             </div>
             <div role="tabpanel" className="tab-pane" id="profile">
               <SignUp signupfunc={this.handleSignUp} intl={this.intl}/>
               <div className={cls}>Sign Up Success</div>
               <div className={cll}>User Exits</div>
               {/*<div>Thong Tin lon: {JSON.stringify(userinfo, null, 2)}</div>*/}
-              {/*<pre>*/}
-              {/*redux state = { JSON.stringify(reduxState, null, 2) }*/}
-              {/*</pre>*/}
             </div>
           </div>
         </div>
@@ -62,6 +71,7 @@ function mapStateToProps(store) {
   return {
     intl: store.intl,
     userinfo: checkSuccess(store),
+    usersignin: checkSigninSuccess(store),
     reduxState: store,
   };
 }
