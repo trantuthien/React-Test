@@ -30,11 +30,11 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Schema, 'Schema', '/Users/thientran/Documents/SourceTree/React-Test/server/models/userinfo.js');
+  __REACT_HOT_LOADER__.register(Schema, 'Schema', '/home/black/Documents/Mern/React-Test/server/models/userinfo.js');
 
-  __REACT_HOT_LOADER__.register(userinfoSchema, 'userinfoSchema', '/Users/thientran/Documents/SourceTree/React-Test/server/models/userinfo.js');
+  __REACT_HOT_LOADER__.register(userinfoSchema, 'userinfoSchema', '/home/black/Documents/Mern/React-Test/server/models/userinfo.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/server/models/userinfo.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/server/models/userinfo.js');
 })();
 
 ;

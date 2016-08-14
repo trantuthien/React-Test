@@ -85,5 +85,19 @@ export function verify(req, res) {
    }else {
     res.status(403).json({success: false, message: 'WRONG USER'});
   }
-  // if (req.path == '/authenticate') next();
+}
+
+export function SignIn(req, res) {
+  console.log(req.body.usersignin);
+  var usersignin = new UserInfo(req.body.usersignin);
+  var query = {'email': usersignin.email, 'password': usersignin.password, 'isactive':1};
+  UserInfo.findOne(query, function (err, usersignin) {
+    console.log(err);
+    console.log(usersignin);
+    if (usersignin !== null){
+
+    }else {
+
+    }
+  });
 }

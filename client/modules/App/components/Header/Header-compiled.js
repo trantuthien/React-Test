@@ -92,6 +92,15 @@ function Header(props, context) {
               _react2.default.createElement(_reactIntl.FormattedMessage, {
                 id: 'addPost' })
             ) : null
+          ),
+          _react2.default.createElement(
+            'li',
+            { key: '3' },
+            _react2.default.createElement(
+              _reactRouter.Link,
+              { to: '/sign-up' },
+              'Sig In / Sign Up'
+            )
           )
         )
       )
@@ -118,9 +127,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Header, 'Header', '/Users/thientran/Downloads/mern_v2/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(Header, 'Header', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Downloads/mern_v2/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
 })();
 
 ;

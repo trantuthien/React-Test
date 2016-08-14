@@ -35,7 +35,7 @@ export function Header(props, context) {
               : null
           }</li>
           <li key="3">
-            <Link to="/sign-up">Sign Up</Link>
+            <Link to="/sign-up">Sig In / Sign Up</Link>
           </li>
         </ul>
       </div>

@@ -28,15 +28,20 @@ export function signUpRequest(userinfo) {
   };
 }
 
-export function signIn(userinfo) {
+export function signIn(usersignin) {
   return {
     type: SIGN_IN,
-    userinfo,
+    usersignin,
   };
 }
 
-export function signInRequest(userinfo) {
+export function signInRequest(usersignin) {
   return (dispatch) => {
-    return callApi('users', 'user').then(() => dispatch(signIn(userinfo)));
+    return callApi('auth/signin', 'post', {
+        usersignin: {
+          email: usersignin.email,
+          password: usersignin.password,
+      }
+    }).then((res) => dispatch(signIn(usersignin)));
   };
 }

@@ -3,6 +3,7 @@
 /**
  * Created by thientran on 8/14/16.
  */
+
 var constant = require('./constant');
 function Fconstant() {}
 Fconstant.prototype.randomIntInc = function (low, high) {
@@ -31,9 +32,23 @@ module.exports = Fconstant;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Fconstant, 'Fconstant', '/home/black/Documents/Mern/React-Test/server/util/fconstant.js');
+  __REACT_HOT_LOADER__.register(Fconstant, 'Fconstant', '/Users/thientran/Documents/SourceTree/React-Test/server/util/fconstant.js');
 })();
 
 ;
 
 //# sourceMappingURL=fconstant-compiled.js.map
+
+;
+
+(function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(Fconstant, 'Fconstant', '/home/black/Documents/Mern/React-Test/server/util/fconstant-compiled.js');
+})();
+
+;
+
+//# sourceMappingURL=fconstant-compiled-compiled.js.map

@@ -82,7 +82,9 @@ var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 // Initialize the Express App
 
@@ -160,15 +162,7 @@ app.use(function (req, res, next) {
     var store = (0, _store.configureStore)();
 
     return (0, _fetchData.fetchComponentData)(store, renderProps.components, renderProps.params).then(function () {
-      var initialView = (0, _server.renderToString)(_react2.default.createElement(
-        _reactRedux.Provider,
-        { store: store },
-        _react2.default.createElement(
-          _IntlWrapper2.default,
-          null,
-          _react2.default.createElement(_reactRouter.RouterContext, renderProps)
-        )
-      ));
+      var initialView = (0, _server.renderToString)(_react2.default.createElement(_reactRedux.Provider, { store: store }, _react2.default.createElement(_IntlWrapper2.default, null, _react2.default.createElement(_reactRouter.RouterContext, renderProps))));
       var finalState = store.getState();
 
       res.set('Content-Type', 'text/html').status(200).end(renderFullPage(initialView, finalState));
@@ -194,15 +188,73 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(app, 'app', '/home/black/Documents/Mern/React-Test/server/server.js');
+  __REACT_HOT_LOADER__.register(app, 'app', '/Users/thientran/Documents/SourceTree/React-Test/server/server.js');
 
-  __REACT_HOT_LOADER__.register(renderFullPage, 'renderFullPage', '/home/black/Documents/Mern/React-Test/server/server.js');
+  __REACT_HOT_LOADER__.register(renderFullPage, 'renderFullPage', '/Users/thientran/Documents/SourceTree/React-Test/server/server.js');
 
-  __REACT_HOT_LOADER__.register(renderError, 'renderError', '/home/black/Documents/Mern/React-Test/server/server.js');
+  __REACT_HOT_LOADER__.register(renderError, 'renderError', '/Users/thientran/Documents/SourceTree/React-Test/server/server.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/server/server.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/server/server.js');
 })();
 
 ;
 
 //# sourceMappingURL=server-compiled.js.map
+
+;
+
+(function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_express2, '_express2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_compression2, '_compression2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_mongoose2, '_mongoose2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_bodyParser2, '_bodyParser2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_path2, '_path2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_IntlWrapper2, '_IntlWrapper2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_webpack2, '_webpack2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_webpackConfig2, '_webpackConfig2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_webpackDevMiddleware2, '_webpackDevMiddleware2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_webpackHotMiddleware2, '_webpackHotMiddleware2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_reactHelmet2, '_reactHelmet2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_routes2, '_routes2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_post2, '_post2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_userinfo2, '_userinfo2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_dummyData2, '_dummyData2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_config2, '_config2', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(app, 'app', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(compiler, 'compiler', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(renderFullPage, 'renderFullPage', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(renderError, 'renderError', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_default, '_default', '/home/black/Documents/Mern/React-Test/server/server-compiled.js');
+})();
+
+;
+
+//# sourceMappingURL=server-compiled-compiled.js.map

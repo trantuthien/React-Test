@@ -1,12 +1,9 @@
 /**
  * Created by thientran on 8/13/16.
  */
-
 import React, { Component, PropTypes } from 'react';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
-// Import Style
-// import styles from './Auth.css';
 
 export class SignUp extends Component {
   signupfunc = () => {
@@ -20,7 +17,6 @@ export class SignUp extends Component {
         email: emailRef.value,
       };
       this.props.signupfunc(userinfo_data);
-      // usernameRef.value = emailRef.value = passwordRef.value = '';
     }
   };
 
@@ -28,12 +24,11 @@ export class SignUp extends Component {
     // const cls = `${styles.form} ${(this.props.showAddPost ? styles.appear : '')}`;
     return (
     <div>
-
         <div className="text-center">
-          <h3>Welcome!</h3>
-          <p>Sign up with your email to continue</p>
+          <h3>Sign up for free!</h3>
+          <p>Get up and running with Everything in minutes.</p>
         </div>
-        <form role='form'>
+        <form role='form' onSubmit={this.signupfunc}>
           <div className='form-group'>
             <input type='text'
                    className='form-control input-lg'
@@ -49,7 +44,10 @@ export class SignUp extends Component {
                    className='form-control input-lg'
                    placeholder='Password' ref="password" required/>
           </div>
-          <button type="submit" className="btn btn-default btn-lg" href="#" onClick={this.signupfunc}><FormattedMessage id="submit" /></button>
+          <button type='submit'
+                  className='btn btn-default btn-lg'>
+                  <FormattedMessage id="submit" />
+          </button>
         </form>
       </div>
     );

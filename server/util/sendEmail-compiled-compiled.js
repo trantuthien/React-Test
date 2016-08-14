@@ -11,7 +11,9 @@ var _userinfo = require('../models/userinfo');
 
 var _userinfo2 = _interopRequireDefault(_userinfo);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var constant = require('./constant'); /**
                                        * Created by thientran on 8/14/16.
@@ -85,15 +87,39 @@ function checkUserExit(email, callback) {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/home/black/Documents/Mern/React-Test/server/util/sendEmail.js');
+  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/Users/thientran/Documents/SourceTree/React-Test/server/util/sendEmail.js');
 
-  __REACT_HOT_LOADER__.register(confirmEmail, 'confirmEmail', '/home/black/Documents/Mern/React-Test/server/util/sendEmail.js');
+  __REACT_HOT_LOADER__.register(confirmEmail, 'confirmEmail', '/Users/thientran/Documents/SourceTree/React-Test/server/util/sendEmail.js');
 
-  __REACT_HOT_LOADER__.register(verifyUser, 'verifyUser', '/home/black/Documents/Mern/React-Test/server/util/sendEmail.js');
+  __REACT_HOT_LOADER__.register(verifyUser, 'verifyUser', '/Users/thientran/Documents/SourceTree/React-Test/server/util/sendEmail.js');
 
-  __REACT_HOT_LOADER__.register(checkUserExit, 'checkUserExit', '/home/black/Documents/Mern/React-Test/server/util/sendEmail.js');
+  __REACT_HOT_LOADER__.register(checkUserExit, 'checkUserExit', '/Users/thientran/Documents/SourceTree/React-Test/server/util/sendEmail.js');
 })();
 
 ;
 
 //# sourceMappingURL=sendEmail-compiled.js.map
+
+;
+
+(function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_userinfo2, '_userinfo2', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+
+  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+
+  __REACT_HOT_LOADER__.register(confirmEmail, 'confirmEmail', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+
+  __REACT_HOT_LOADER__.register(verifyUser, 'verifyUser', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+
+  __REACT_HOT_LOADER__.register(checkUserExit, 'checkUserExit', '/home/black/Documents/Mern/React-Test/server/util/sendEmail-compiled.js');
+})();
+
+;
+
+//# sourceMappingURL=sendEmail-compiled-compiled.js.map

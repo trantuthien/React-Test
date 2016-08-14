@@ -44,17 +44,22 @@ function signUpRequest(userinfo) {
   };
 }
 
-function signIn(userinfo) {
+function signIn(usersignin) {
   return {
     type: SIGN_IN,
-    userinfo: userinfo
+    usersignin: usersignin
   };
 }
 
-function signInRequest(userinfo) {
+function signInRequest(usersignin) {
   return function (dispatch) {
-    return (0, _apiCaller2.default)('users', 'user').then(function () {
-      return dispatch(signIn(userinfo));
+    return (0, _apiCaller2.default)('auth/signin', 'post', {
+      usersignin: {
+        email: usersignin.email,
+        password: usersignin.password
+      }
+    }).then(function (res) {
+      return dispatch(signIn(usersignin));
     });
   };
 }
@@ -65,19 +70,19 @@ function signInRequest(userinfo) {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(SIGN_UP, 'SIGN_UP', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(SIGN_UP, 'SIGN_UP', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(SIGN_IN, 'SIGN_IN', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(SIGN_IN, 'SIGN_IN', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(LOST_PASS, 'LOST_PASS', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(LOST_PASS, 'LOST_PASS', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signUp, 'signUp', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signUp, 'signUp', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signUpRequest, 'signUpRequest', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signUpRequest, 'signUpRequest', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signIn, 'signIn', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signIn, 'signIn', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signInRequest, 'signInRequest', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signInRequest, 'signInRequest', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 })();
 
 ;
