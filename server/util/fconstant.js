@@ -2,6 +2,7 @@
  * Created by thientran on 8/14/16.
  */
 var constant = require('./constant');
+var config = require('../serverConfig');
 function Fconstant() {
 }
 Fconstant.prototype.randomIntInc = function (low, high) {
@@ -19,6 +20,14 @@ Fconstant.prototype.response = function (type_response, res, success, code, mess
     default:
       res.send('success: ' + success + ' mode: ' + mode + ' message: ' + message);
       break;
+  }
+};
+Fconstant.prototype.createToken = function (object) {
+  var ms = require('ms');
+  var jwt = require('jsonwebtoken');
+  if (typeof object !== 'undefined' && object !== null) {
+    var time = ms('7d');
+    return jwt.sign(object, config.secret, {expiresIn: time});
   }
 };
 

@@ -89,7 +89,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Webpack Requirements
 var app = new _express2.default();
-
 // Run Webpack dev server in development mode
 if (process.env.NODE_ENV === 'development') {
   var compiler = (0, _webpack2.default)(_webpackConfig2.default);
@@ -123,6 +122,27 @@ app.use(_bodyParser2.default.json({ limit: '20mb' }));
 app.use(_bodyParser2.default.urlencoded({ limit: '20mb', extended: false }));
 app.use(_express2.default.static(_path2.default.resolve(__dirname, '../dist')));
 app.use('/api', _post2.default);
+// app.use(function (req, res, next) {
+//   console.log(req.path);
+//   if (req.path.indexOf('/api') < 0) next();
+//   else {
+//     var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//     if (token) {
+//       jwt.verify(token, serverConfig.secret, function (err, decoded) {
+//         if (err) {
+//           //res.json({success: false, message: 'error authen'});
+//           res.status(403).json({success: false, message: 'WRONG TOKEN'});
+//         } else {
+//           req.decoded = decoded;
+//           next();
+//         }
+//       })
+//     } else {
+//       console.log('authen lai nha');
+//       res.status(403).json({success: false, message: 'NO TOKEN'});
+//     }
+//   }
+// });
 app.use('/api/auth', _userinfo2.default);
 
 // Render Initial HTML

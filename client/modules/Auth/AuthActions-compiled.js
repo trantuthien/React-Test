@@ -70,19 +70,19 @@ function signInRequest(usersignin) {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(SIGN_UP, 'SIGN_UP', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(SIGN_UP, 'SIGN_UP', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(SIGN_IN, 'SIGN_IN', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(SIGN_IN, 'SIGN_IN', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(LOST_PASS, 'LOST_PASS', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(LOST_PASS, 'LOST_PASS', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signUp, 'signUp', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signUp, 'signUp', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signUpRequest, 'signUpRequest', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signUpRequest, 'signUpRequest', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signIn, 'signIn', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signIn, 'signIn', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 
-  __REACT_HOT_LOADER__.register(signInRequest, 'signInRequest', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/Auth/AuthActions.js');
+  __REACT_HOT_LOADER__.register(signInRequest, 'signInRequest', '/home/black/Documents/Mern/React-Test/client/modules/Auth/AuthActions.js');
 })();
 
 ;

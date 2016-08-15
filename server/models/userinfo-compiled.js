@@ -17,7 +17,8 @@ var userinfoSchema = new Schema({
   email: { type: 'String', required: true },
   password: { type: 'String', required: true },
   isactive: { type: 'Number', required: true },
-  activecode: { type: 'String', required: true }
+  activecode: { type: 'String', required: true },
+  token: { type: 'String', required: true }
 });
 
 var _default = _mongoose2.default.model('UserInfo', userinfoSchema);

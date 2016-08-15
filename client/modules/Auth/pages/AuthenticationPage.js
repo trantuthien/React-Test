@@ -15,21 +15,18 @@ import {signUpRequest, signInRequest} from '../AuthActions';
 import {checkSuccess, checkSigninSuccess} from '../AuthReducer';
 
 class AuthenticationPage extends Component {
-  // Truyen ham handleSignUp vao Component SignUp
+  // Send ham handleSignUp vao Component SignUp
   handleSignUp = (userinfo) => {
     this.props.dispatch(signUpRequest(userinfo));
   };
-  // Truyen ham handleSignIn vao Component SignIn
+  // Send ham handleSignIn vao Component SignIn
   handleSignIn = (usersignin) => {
     this.props.dispatch(signInRequest(usersignin));
   };
-
-
   render() {
     var {userinfo, reduxState, usersignin} = this.props;     // Khai bao bien userinfo va reduxSate de xem du lieu tra ve
     const cls = `${styles.form} ${((userinfo==11) ? styles.appear : '' )}`; // Neu userinfo =11 thi them class appear o trong file Auth.css
     const cll = `${styles.form} ${((userinfo==12) ? styles.appear : '' )}`; // Neu userinfo =12 thi them class appear o trong file Auth.css
-
     const fuck = `${styles.form} ${((usersignin==14) ? styles.appear : '' )}`; // Neu userinfo =11 thi them class appear o trong file Auth.css
     const tan = `${styles.form} ${((usersignin==15) ? styles.appear : '' )}`; // Neu userinfo =12 thi them class appear o trong file Auth.css
     if(usersignin == 14){

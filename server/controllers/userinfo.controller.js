@@ -90,8 +90,11 @@ export function verify(req, res) {
 export function SignIn(req, res) {
   console.log(req.body.usersignin);
   var usersignin = new UserInfo(req.body.usersignin);
+  let token = fconstant.createToken(usersignin);
   var query = {'email': usersignin.email, 'password': usersignin.password, 'isactive':1};
-  UserInfo.findOne(query, function (err, usersignin) {
+    UserInfo.findOneAndUpdate(query,{'token': token }, {
+    safe: true,
+  }, function (err, usersignin) {
     console.log(err);
     console.log(usersignin);
     if (usersignin !== null){

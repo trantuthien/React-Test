@@ -7,6 +7,7 @@ const userinfoSchema = new Schema({
   password: { type: 'String', required: true },
   isactive: { type: 'Number', required: true },
   activecode: { type: 'String', required: true },
+  token: { type: 'String', required: true },
 });
 
 export default mongoose.model('UserInfo', userinfoSchema);

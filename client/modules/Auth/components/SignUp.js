@@ -6,7 +6,8 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
 
 export class SignUp extends Component {
-  signupfunc = () => {
+  signupfunc = (e) => {
+    e.preventDefault();
     const usernameRef = this.refs.username;
     const emailRef = this.refs.email;
     const passwordRef = this.refs.password;
@@ -28,29 +29,26 @@ export class SignUp extends Component {
           <h3>Sign up for free!</h3>
           <p>Get up and running with Everything in minutes.</p>
         </div>
-        <form role='form' >
+        <form role='form' onSubmit={this.signupfunc}>
           <div className='form-group'>
             <input type='text'
                    className='form-control input-lg'
-                   value='bachyeutan'
                    placeholder='Username' ref="username" required/>
           </div>
           <div className='form-group'>
             <input type='email'
-                   value='bachtt@topica.edu.vn'
                    className='form-control input-lg'
                    placeholder='Email' ref="email" required/>
           </div>
           <div className='form-group'>
             <input type='password'
-                   value='fucktan'
                    className='form-control input-lg'
                    placeholder='Password' ref="password" required/>
           </div>
-          <a type='submit' onClick={this.signupfunc}
-                  className='btn btn-default btn-lg'>
+          <button type='submit'
+                  className='btn btn-primary btn-lg'>
                   <FormattedMessage id="submit" />
-          </a>
+          </button>
         </form>
       </div>
     );

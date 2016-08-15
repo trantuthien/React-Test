@@ -1,0 +1,1 @@
+{"version":3,"sources":["serverConfig.js"],"names":[],"mappings":";;AAAA;;;AAGA,OAAO,OAAP,GAAiB;AACf,UAAQ;AADO,CAAjB","file":"serverConfig-compiled.js","sourcesContent":["/**\n * Created by black on 8/15/16.\n */\nmodule.exports = {\n  secret: 'tanbede',\n};\n"]}

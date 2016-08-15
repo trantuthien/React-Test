@@ -114,8 +114,11 @@ function verify(req, res) {
 function SignIn(req, res) {
   console.log(req.body.usersignin);
   var usersignin = new _userinfo2.default(req.body.usersignin);
+  var token = fconstant.createToken(usersignin);
   var query = { 'email': usersignin.email, 'password': usersignin.password, 'isactive': 1 };
-  _userinfo2.default.findOne(query, function (err, usersignin) {
+  _userinfo2.default.findOneAndUpdate(query, { 'token': token }, {
+    safe: true
+  }, function (err, usersignin) {
     console.log(err);
     console.log(usersignin);
     if (usersignin !== null) {
@@ -133,13 +136,13 @@ function SignIn(req, res) {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
+  __REACT_HOT_LOADER__.register(fconstant, 'fconstant', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller.js');
 
-  __REACT_HOT_LOADER__.register(addUser, 'addUser', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
+  __REACT_HOT_LOADER__.register(addUser, 'addUser', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller.js');
 
-  __REACT_HOT_LOADER__.register(verify, 'verify', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
+  __REACT_HOT_LOADER__.register(verify, 'verify', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller.js');
 
-  __REACT_HOT_LOADER__.register(SignIn, 'SignIn', '/Users/thientran/Documents/SourceTree/React-Test/server/controllers/userinfo.controller.js');
+  __REACT_HOT_LOADER__.register(SignIn, 'SignIn', '/home/black/Documents/Mern/React-Test/server/controllers/userinfo.controller.js');
 })();
 
 ;

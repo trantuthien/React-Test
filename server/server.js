@@ -13,7 +13,6 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 // Initialize the Express App
 const app = new Express();
-
 // Run Webpack dev server in development mode
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(config);
@@ -57,6 +56,27 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist')));
 app.use('/api', posts);
+// app.use(function (req, res, next) {
+//   console.log(req.path);
+//   if (req.path.indexOf('/api') < 0) next();
+//   else {
+//     var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//     if (token) {
+//       jwt.verify(token, serverConfig.secret, function (err, decoded) {
+//         if (err) {
+//           //res.json({success: false, message: 'error authen'});
+//           res.status(403).json({success: false, message: 'WRONG TOKEN'});
+//         } else {
+//           req.decoded = decoded;
+//           next();
+//         }
+//       })
+//     } else {
+//       console.log('authen lai nha');
+//       res.status(403).json({success: false, message: 'NO TOKEN'});
+//     }
+//   }
+// });
 app.use('/api/auth', userinfos);
 
 // Render Initial HTML

@@ -5,7 +5,8 @@ import React, {Component, PropTypes} from 'react';
 import {injectIntl, intlShape, FormattedMessage} from 'react-intl';
 
 export class SignIn extends Component {
-  signinfunc = () => {
+  signinfunc = (e) => {
+    e.preventDefault();
     const emailRef = this.refs.email;
     const passwordRef = this.refs.password;
     if (emailRef.value && passwordRef.value) {
@@ -25,12 +26,12 @@ export class SignIn extends Component {
           <h3>Welcome back!</h3>
           <p>Sign in with your email to continue</p>
         </div>
-        <form role='form'>
+        <form role='form' onSubmit={this.signinfunc}>
           <div className='form-group'>
             <input
               ref='email'
               type='email'
-              value='bachtt@topica.edu.vn'
+              value='bachtonthat@gmail.com'
               className='form-control input-lg'
               placeholder='Email' required/>
           </div>
@@ -38,15 +39,15 @@ export class SignIn extends Component {
             <input
               ref='password'
               type='password'
-              value='fucktan'
+              value='dinhmenh'
               className='form-control input-lg'
               placeholder='Password' required/>
           </div>
-          <a
-            type='submit' onClick={this.signinfunc}
-            className='btn btn-default btn-lg'>
+          <button
+            type='submit'
+            className='btn btn-primary btn-lg'>
             <FormattedMessage id="submit"/>
-          </a>
+          </button>
         </form>
       </div>
     );
