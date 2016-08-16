@@ -6,7 +6,7 @@ import DropdownButton from 'react-bootstrap/lib/DropdownButton';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 // Import Style
-// import styles from './Header.css';
+import styles from './Header.css';
 
 export function Header(props, context) {
   const languageNodes = props.intl.enabledLanguages.map(
@@ -15,7 +15,7 @@ export function Header(props, context) {
   );
 
   return <nav className="navbar navbar-default">
-    <div className="container-fluid">
+    <div className="container">
       <div className="navbar-header">
         <div className="navbar-brand"><Link to="/"><FormattedMessage id="siteTitle"/></Link></div>
       </div>

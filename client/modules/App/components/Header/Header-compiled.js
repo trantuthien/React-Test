@@ -21,10 +21,11 @@ var _MenuItem = require('react-bootstrap/lib/MenuItem');
 
 var _MenuItem2 = _interopRequireDefault(_MenuItem);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Header = require('./Header.css');
 
-// Import Style
-// import styles from './Header.css';
+var _Header2 = _interopRequireDefault(_Header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header(props, context) {
   var languageNodes = props.intl.enabledLanguages.map(function (lang) {
@@ -47,7 +48,7 @@ function Header(props, context) {
     { className: 'navbar navbar-default' },
     _react2.default.createElement(
       'div',
-      { className: 'container-fluid' },
+      { className: 'container' },
       _react2.default.createElement(
         'div',
         { className: 'navbar-header' },
@@ -108,6 +109,9 @@ function Header(props, context) {
   );
 }
 
+// Import Style
+
+
 Header.contextTypes = {
   router: _react2.default.PropTypes.object
 };
@@ -127,9 +131,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Header, 'Header', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(Header, 'Header', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Documents/SourceTree/React-Test/client/modules/App/components/Header/Header.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Header/Header.js');
 })();
 
 ;

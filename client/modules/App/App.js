@@ -32,7 +32,7 @@ export class App extends Component {
     return (
       <div>
         {/*{this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}*/}
-        <div className="container">
+        <div>
           <Helmet
             title="MERN Starter - Blog App"
             titleTemplate="%s - Blog App"
@@ -61,7 +61,7 @@ export class App extends Component {
             intl={this.props.intl}
             toggleAddPost={this.toggleAddPostSection}
           />
-          <div>
+          <div className="container">
             {this.props.children}
           </div>
           <Footer />

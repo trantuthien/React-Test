@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import styles from './Footer.css';
 
 // Import Images
-import bg from '../../header-bk.png';
 
 export function Footer() {
   return (

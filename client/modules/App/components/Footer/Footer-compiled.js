@@ -15,13 +15,10 @@ var _Footer = require('./Footer.css');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _headerBk = require('../../header-bk.png');
-
-var _headerBk2 = _interopRequireDefault(_headerBk);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Import Style
+// Import Images
+
 function Footer() {
   return _react2.default.createElement(
     'div',
@@ -29,12 +26,12 @@ function Footer() {
     _react2.default.createElement(
       'p',
       { className: 'text-center' },
-      'The Musteker Team'
+      'The Musketeer Team'
     )
   );
 }
 
-// Import Images
+// Import Style
 var _default = Footer;
 exports.default = _default;
 ;
@@ -44,9 +41,9 @@ exports.default = _default;
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Footer, 'Footer', '/Users/thientran/Downloads/mern_v2/client/modules/App/components/Footer/Footer.js');
+  __REACT_HOT_LOADER__.register(Footer, 'Footer', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Footer/Footer.js');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/thientran/Downloads/mern_v2/client/modules/App/components/Footer/Footer.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/black/Documents/Mern/React-Test/client/modules/App/components/Footer/Footer.js');
 })();
 
 ;
